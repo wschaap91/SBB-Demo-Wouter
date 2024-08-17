@@ -23,8 +23,13 @@ defineProps<{
 <style>
 .call-to-action-block {
     flex-direction: column;
-    padding: 120px 30px 100px;
     display: flex;
+    padding: 60px 20px 50px;
+
+    @media screen and (min-width: 768px) {
+        padding: 120px 30px 100px;
+        
+    }
 }
 
 .call-to-action-block__content {

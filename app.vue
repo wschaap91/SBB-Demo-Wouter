@@ -78,7 +78,7 @@ const { arrivedState } = useScroll(pagewrap);
     <main>
     <div v-if="status === 'pending'">Loading...</div>
     <div v-else>
-      <ContentBlock :element="data.elements[0]" />
+      <ContentBlock top :element="data.elements[0]" />
 
       <CtaComponent :content="data.ctas[0].content"/>
     </div>
@@ -117,10 +117,20 @@ const { arrivedState } = useScroll(pagewrap);
 
     ul {
       display: flex;
-      gap: 20px;
       list-style: none;
       padding-inline: 0;
       margin-block: 0;
+
+      font-size: 14px;
+      flex-direction: column;
+      gap: 0.25rem;
+      align-items: flex-end;
+
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
+        font-size: 1rem;
+        gap: 1.25rem;
+      }
     }
   }
 
